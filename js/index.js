@@ -135,4 +135,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // call the displayQuiz function
   displayQuiz();
+
+  // reload when reload button clicked
+  btnResetElement.addEventListener("click",()=>window.location.reload());
+  //btnSubmitElement.addEventListener("click",testing);
+  btnSubmitElement.addEventListener("click",calculateScore);
+
 });
