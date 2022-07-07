@@ -112,13 +112,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (quizItem.a == i) {
           //change background color of li element here
+          liElement.style.backgroundColor = "green";
         }
 
         if (radioElement.checked) {
-          // code for task 1 goes here
+          // i represent the radioElement.value or the current radio button of the current round(iteration) of for loop. But we don't have value attribute in radio button, hence, using i to represent the value of each radio button)
+          if (i == quizItem.a){
+            score++;
+            console.log(`Score is : ${score}`);
+          }
         }
       }
     });
+    scoreElement.innerHTML=`Total score: ${score}`;
+    btnSubmitElement.style.display="none";
+
+    //checking if user submmited the quiz ontime when calculate score function is called.
+    if (remainingTime > 0){
+      submitted = true;      
+    }
   };
 
   // call the displayQuiz function
